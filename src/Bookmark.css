@@ -1,21 +1,19 @@
-.bookmarks-heading{
-    font-family: "Bebas Neue",sans-serif;
+.bookmarks-heading {
+    font-family: "Bebas Neue", sans-serif;
     font-size: 3rem;
     font-weight: 300;
-    color: #ddd;
-    letter-spacing: .1rem;
+    color: #333; /* Dark text for light mode */
+    letter-spacing: 0.1rem;
     margin-bottom: 2rem;
 }
 
-
-.bookmarks-list{
+.bookmarks-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
 }
 
-.bookmark-item{
+.bookmark-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,24 +21,24 @@
     cursor: pointer;
 }
 
-.bookmark-item img{
+.bookmark-item img {
     width: 7rem;
     height: 7rem;
     object-fit: cover;
     border-radius: 0.8rem;
     margin-right: 1rem;
+    border: 1px solid #ddd; /* Light border for better visibility */
 }
 
-.bookmark-item h3{
+.bookmark-item h3 {
     font-family: 'Comfortaa', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #fff;
-
+    color: #444; /* Darker text for readability in light mode */
 }
 
-.delete-button{
+.delete-button {
     font-size: 2.4rem;
-    color: #b88efc;
+    color: #d11a2a; /* Bright red for visibility */
     cursor: pointer;
 }

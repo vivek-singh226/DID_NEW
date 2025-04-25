@@ -1,31 +1,32 @@
-.modal-overlay{
+.modal-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.7); /* Light overlay */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
-.modal-content{
+.modal-content {
     width: 90%;
     max-width: 60rem;
     height: auto;
-    max-height:100%;
-    background-color: #111214;
+    max-height: 100%;
+    background-color: #f9f9f9; /* Light background */
     padding: 4rem;
     border-radius: 1rem;
-    box-shadow: 0 0 5rem 4rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5rem 4rem rgba(200, 200, 200, 0.5); /* Softer shadow */
     position: relative;
+    color: #333; /* Dark text color for content */
+    font-size: 1.6rem; /* Optional: Adjust text size for readability */
 }
 
-.close-button{
+.close-button {
     position: absolute;
     top: 1rem;
     right: 2rem;
     font-size: 2rem;
-    color: white;
+    color: #333; /* Dark color for contrast */
     cursor: pointer;
-
 }

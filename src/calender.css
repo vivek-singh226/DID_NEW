@@ -1,8 +1,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1c1f24;
-    color: #fff;
+    background-color: #f9f9f9;
+    color: #222;
     height: 100vh;
 }
 
@@ -11,13 +11,13 @@ body {
     max-width: 400px;
     min-width: 26rem;
     height: auto;
-    background-color: #111214;
+    background-color: #ffffff;
     border-radius: 1rem;
     padding: 1.5rem;
     display: grid;
     place-items: center;
     box-sizing: border-box;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navigate-date {
@@ -33,7 +33,7 @@ body {
 .navigate-date h2 {
     font-size: 1.8rem;
     font-weight: 400;
-    color: #bbb;
+    color: #555;
     margin: 0;
 }
 
@@ -48,19 +48,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2c3542;
+    background-color: #e0e0e0;
     border-radius: 50%;
     font-size: 1.5rem;
-    color: #b88efc;
+    color: #b50000;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .buttons i:hover {
-    background-color: #d4418e;
-    background-image :linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
+    background: rgb(213,51,51);
+    background: radial-gradient(circle, rgba(213,51,51,1) 0%, rgba(38,29,29,1) 100%);
+    color: #fff;
 }
-
 
 .weekdays {
     width: 100%;
@@ -74,11 +74,10 @@ body {
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: #78879e;
+    color: #666;
     letter-spacing: 0.1rem;
     text-align: center;
 }
-
 
 .days {
     display: flex;
@@ -90,7 +89,7 @@ body {
     width: calc(100% / 7);
     aspect-ratio: 1 / 1;
     font-size: 1rem;
-    color: #ddd;
+    color: #555;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,15 +100,15 @@ body {
 }
 
 .days span:hover {
-    background-color: #d4418e;
-    background-image :linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
+    background: rgb(242,16,16);
+    background: radial-gradient(circle, rgba(242,16,16,1) 0%, rgba(116,93,93,1) 100%);
     border-radius: 50%;
     color: #fff;
-
 }
 
 .days span.selected {
-    background-color: #b88efc;
-    color: #111214;
+    background: rgb(213,51,51);
+    background: radial-gradient(circle, rgba(213,51,51,1) 0%, rgba(38,29,29,1) 100%);
+    color: #fff;
     font-weight: bold;
 }

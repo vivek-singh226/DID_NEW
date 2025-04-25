@@ -4,9 +4,15 @@ import Calender from './calender.jsx';
 import './News.css';
 import userImg from '../src/assets/images/user.jpg';
 import noImg from '../src/assets/images/no-img.png';
+import blogImg1 from'../src/assets/images/blog1.jpg';
+import blogImg2 from'../src/assets/images/blog2.jpg';
+import blogImg3 from'../src/assets/images/blog3.jpg';
+import blogImg4 from'../src/assets/images/blog4.jpg';
 import axios from 'axios';
 import NewsModal from './NewsModal';
 import Bookmarks from './Bookmarks'
+import logo from '../src/assets/images/logo.jpeg';
+
 
 
 const categories = [
@@ -21,7 +27,7 @@ const categories = [
   "nation",
 ];
 
-const News = () => {
+const News = ({onShowBlogs}) => {
   const [headline, setHeadline] = useState(null);
   const [news, setNews] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('general');
@@ -47,7 +53,7 @@ const News = () => {
       const response = await axios.get(url);
         const fetchedNews = response.data.articles || [];
 
-        // Assign a default image if an article has no image
+        
         fetchedNews.forEach((article) => {
           if (!article.image) {
             article.image = noImg;
@@ -55,7 +61,7 @@ const News = () => {
         });
 
         setHeadline(fetchedNews[0]);
-        setNews(fetchedNews.slice(1, 7)); // Display 6 news articles
+        setNews(fetchedNews.slice(1, 7)); 
 
         const savedBookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [] 
         setBookmarks(savedBookmarks)
@@ -94,7 +100,12 @@ const News = () => {
   return (
     <div className="news">
       <header className="news-header">
-        <h1 className="logo">DID</h1>
+        <div className='head'>
+        <h1 className="logo">D<span className="red">i</span>D</h1>
+          <div className='home'>Home</div>
+          <div className='about'>About Us</div>
+          <div className='contact'> Contact Us</div>
+        </div>
         <div className="search-bar">
           <form onSubmit={handleSearch}>
             <input type="text" placeholder="Search News..." value={searchInput} onChange={(e)=>setSearchInput(e.target.value)}/>
@@ -106,7 +117,7 @@ const News = () => {
       </header>
       <div className="news-content">
         <div className="navbar">
-          <div className="user">
+          <div className="user" onClick={onShowBlogs} >
             <img src={userImg} alt="User" />
             <p>Vivek's Blogs</p>
           </div>
@@ -177,14 +188,67 @@ const News = () => {
           onSelectArticle={handleArticleClick} 
           onDeleteBookmark={handleBookmarkClick}  
           />
-        <div className="my-blogs">My Blogs</div>
+        <div className="my-blogs">
+          <h1 className="my-blogs-heading">My Blogs</h1>
+          <div className="blog-posts">
+            <div className="blog-post">
+              <img src={blogImg1} alt="Post Image" />
+              <h3>Lorem ipsum dolor sit.</h3>
+              <div className="post-buttons">
+                <button className="edit-post">
+                  <i className="bx bxs-edit"></i>
+                </button>
+                <button className="delete-post">
+                  <i className="bx bxs-x-circle"></i>
+                </button>
+              </div>
+            </div>
+            <div className="blog-post">
+              <img src={blogImg2} alt="Post Image" />
+              <h3>Lorem ipsum dolor sit.</h3>
+              <div className="post-buttons">
+                <button className="edit-post">
+                  <i className="bx bxs-edit"></i>
+                </button>
+                <button className="delete-post">
+                  <i className="bx bxs-x-circle"></i>
+                </button>
+              </div>
+            </div>
+            <div className="blog-post">
+              <img src={blogImg3} alt="Post Image" />
+              <h3>Lorem ipsum dolor sit.</h3>
+              <div className="post-buttons">
+                <button className="edit-post">
+                  <i className="bx bxs-edit"></i>
+                </button>
+                <button className="delete-post">
+                  <i className="bx bxs-x-circle"></i>
+                </button>
+              </div>
+            </div>
+            <div className="blog-post">
+              <img src={blogImg4} alt="Post Image" />
+              <h3>Lorem ipsum dolor sit.</h3>
+              <div className="post-buttons">
+                <button className="edit-post">
+                  <i className="bx bxs-edit"></i>
+                </button>
+                <button className="delete-post">
+                  <i className="bx bxs-x-circle"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="weather-calender">
           <Weather />
           <Calender />
         </div>
       </div>
       <footer className="news-footer">
-        <p>All rights are reserved by Vivek Singh</p>
+        <p>this website is maintained for only learning purpose</p>
+        <p>&copy;Vivek Singh </p>
       </footer>
     </div>
   );
